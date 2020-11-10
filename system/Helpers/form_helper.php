@@ -728,7 +728,8 @@ if (! function_exists('set_value'))
 
 		if ($value === null)
 		{
-			$value = $request->getPost($field) ?? $default;
+			//$value = $request->getPost($field) ?? $default;	// Old code
+			$value = $request->getPostGet($field) ?? $default;
 		}
 
 		return ($htmlEscape) ? esc($value) : $value;
